@@ -1,7 +1,7 @@
 -- 1. Все посты пользователя 'Александр'
 select p.title, p.content
 from posts p
-join users u On p.users_id = u.id
+join users u On p.user_id = u.id
 where u.username = 'Александр';
 
 -- 2. количество комментариев к каждому посту
