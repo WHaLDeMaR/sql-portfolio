@@ -1,0 +1,11 @@
+-- 1. Все посты пользователя 'Александр'
+select p.title, p.content
+from posts p
+join users u On p.users_id = u.id
+where u.username = 'Александр';
+
+-- 2. количество комментариев к каждому посту
+select p.title, count(c.id) as comment_count
+from posts p
+left join comments c on p.id = c.post_id
+group by p.title;

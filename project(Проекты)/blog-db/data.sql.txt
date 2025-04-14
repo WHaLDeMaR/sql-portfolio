@@ -1,0 +1,17 @@
+-- Добавляем пользователей
+insert into users (username, email)
+values
+    ('Александр', 'alex@mail.com'),
+	('Мария', 'maria@mail.com');
+
+-- Добавляем посты
+insert into posts (user_id, title, content)
+values 
+    (1, 'Поездка в Китай!', 'Всем привет, мы приобрели билеты в Китай...'),
+	(2, 'Рецепт пирога', 'Мука, яйца, сахар...');
+
+-- Добавляем комментарии
+insert into comments (post_id, user_id, text)
+values
+    (1, 2, 'Круто! Жду больше фотографий.')
+	(2, 1, 'Рекомендую рецепт! мужу понравилось.')
