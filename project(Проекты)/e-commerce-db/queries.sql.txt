@@ -1,0 +1,12 @@
+-- 1. Общая выручка магазина
+select sum(p.price * oi.quantity) as total_revenue -- сумма произведений (цена товара из таблицы products * количество товара в заказе)
+                                                   -- total_revenue для результата вычислений. Это имя столбца в выходной выборке
+from order_items oi
+join products p on oi.product_id = p.id;
+
+-- 2. Заказы с именами покупателей 
+select c.name, o.order_date, p.name as product, oi.quantity -- Выбирает данные для отображения
+from orders o
+join customers c on o.customer_id = c.id -- Соединяет таблицу заказов с таблицей покупателей (customers)
+join order_items oi on o.id = oi.order_id -- Соединяет с таблицей позиций заказа (order_items)
+join products p on oi.product_id = p.id; -- Соединяет с таблицей товаров (products)

@@ -1,0 +1,21 @@
+-- Покупатели
+insert into customers (id, name, email)
+values 
+    (1, 'Иван Петров', 'ivan@mail.com'),
+	(2, 'Елена Смирнова', 'elena@mail.com');
+
+-- Товары 
+insert into products (id, name, price)
+values
+    (1, 'Ноутбук', 58000),
+	(2, 'Смартфон', 45000);
+
+-- Заказы 
+insert into orders (id, customer_id)
+values (1, 1), (2, 2);
+
+-- Состав заказов
+insert into order_items (order_id, product_id, quantity)
+values 
+    (1, 1, 1), -- Иван заказл ноутбук
+	(2, 2, 2); -- Елена заказала два смартфона
