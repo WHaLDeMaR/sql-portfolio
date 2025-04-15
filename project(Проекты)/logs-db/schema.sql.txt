@@ -1,0 +1,8 @@
+CREATE TABLE logs (
+    id SERIAL PRIMARY KEY,
+    ip_address INET,
+    user_agent TEXT,
+    request_path VARCHAR(500),
+    status_code INTEGER,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
